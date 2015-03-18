@@ -1,22 +1,25 @@
 
-var phonecatApp =  angular.module('phonecatApp', [
+var legislatorApp =  angular.module('legislatorApp', [
     'ngRoute',
     'legislatorController',
-    'phonecatFilters',
     'politicServices'
 ]);
 
 
 
-phonecatApp.config(['$routeProvider',
+legislatorApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
+      when('/home', {
+        templateUrl: 'partials/legislator-list.html',
         controller: 'LegislatorListCtrl'
       }).
+      when('/legislator-detail',{
+        templateUrl:'partials/legislator-detail.html',
+        controller:'LegislatorDetailCtrl'
+      }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/home'
       });
   }]);
 

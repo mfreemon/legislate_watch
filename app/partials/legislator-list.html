@@ -1,0 +1,40 @@
+
+
+
+
+
+<div class = "container">
+  
+  <section class= "search-menu">
+    <div class= "search-input" >
+      Search By Last Name: <input ng-model="query">
+    </div>
+    <div class ="search-dropdown">
+      Search by State: <inpput ng-model = "query">
+      <select ng-model="orderProp">
+         <option value = "last_name">Alphabetical</option>
+         <option value = "state_name">State</option>
+      </select>
+     </div>
+  </section>
+
+
+  <div class ="legislator-block">
+     <ul>
+         <li class="legislator" ng-repeat="legislator in legislators.results| filter:query | orderBy:orderProp">
+             <!-- <a href ="#/phones/{{phone.id}}">
+               <img class ="thumb" ng-src="{{phone.imageUrl}}">
+             </a> -->
+            <a href = "#"> {{legislator.title}} {{legislator.first_name}} {{legislator.last_name}} ({{legislator.party}})
+            </a>
+          <p> Senator from {{legislator.state_name}}</p>
+         </li>
+     </ul>
+  </div>
+
+</div>
+
+<p> Total number of phones so far is {{legislator.first_name.length}}</p>
+
+
+<p> 1+1 = {{1+1}}</p>
