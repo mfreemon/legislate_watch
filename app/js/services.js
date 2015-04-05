@@ -6,12 +6,13 @@
 
 var politicServices = angular.module('politicServices', ['ngResource']);
 
-politicServices.factory('Legislator', ['$resource', 
+politicServices.factory('LegislatorService', ['$resource', 
 	function($resource){
 		return $resource('https://congress.api.sunlightfoundation.com/legislators?apikey=63ff41a056884535b7a2d9cd90bed918&chamber=senate&per_page=100',{},{
 			query:{
 				method:'GET'
-				}
+				},
+			bioguide:'bioguide'	
 			});
 	}]);
 

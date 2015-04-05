@@ -22,12 +22,10 @@
   <div class ="legislator-block">
      <ul>
          <li class="legislator" ng-repeat="legislator in legislators.results| filter:query | orderBy:orderProp">
-             <!-- <a href ="#/phones/{{phone.id}}">
-               <img class ="thumb" ng-src="{{phone.imageUrl}}">
-             </a> -->
+            <img ng-src = "http://bioguide.congress.gov/bioguide/photo/{{legislator.bioguide_id[0]}}/{{legislator.bioguide_id}}.jpg" >
             <a href = "#"> {{legislator.title}} {{legislator.first_name}} {{legislator.last_name}} ({{legislator.party}})
             </a>
-          <p> Senator from {{legislator.state_name}}</p>
+          <p> Senator from {{legislator.state_name}} </p>
          </li>
      </ul>
   </div>

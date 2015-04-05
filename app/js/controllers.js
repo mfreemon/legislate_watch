@@ -17,17 +17,15 @@ var legislatorController = angular.module('legislatorController', [])
 
 
 /** another means of preventing depreciation of services during minification issues**/
-legislatorController.controller('LegislatorListCtrl',['$scope', '$parse','Legislator',
-	function($scope, $parse, Legislator) {
-   	$scope.legislators = Legislator.get();
-   var	biach = Legislator.get();
-   var obj = $parse(biach.results);
-   //var obj = JSON.parse(biach);
-   console.log(obj);
-   // console.log(obj.results.bioguide_id[0]);
-   	 //var dope = $scope.legislators.indexOf('bioguide_id');
-   	//console.log(biach.results);
-   	// // console.log($scope.legislators.bioguide_id);
+legislatorController.controller('LegislatorListCtrl',['$scope', 'LegislatorService',
+	function($scope, LegislatorService) {
+   	$scope.legislators = LegislatorService.get();
+
+
+
+   	console.log($scope.legislators.bioguide_id);
+   
+
     // $scope.orderProp = "age";
 }]);
 
